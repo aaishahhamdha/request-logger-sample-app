@@ -2,17 +2,19 @@
 
 A lightweight Java backend service built with [Spark Java](http://sparkjava.com/) designed for **WSO2 Identity Server** and **WSO2 Identity Gateway** documentation and testing purposes.
 
+Identity gateway official documentation: [Protect Apps with Identity Gateway](https://is.docs.wso2.com/en/latest/references/tutorials/protect-apps-with-identity-gateway/)
+
 ![Sample Application Dark Mode](app-darkmode.png)
 
 ## Overview
 
-The **Request Logger Sample App** is a mock backend service that captures and displays detailed information about incoming HTTP requests. It serves as an excellent tool for:
+The **Request Logger Sample App** is a mock backend service that captures and displays detailed information about incoming HTTP requests. It serves as a tool for:
 
 - Testing identity gateway configurations
 - Debugging proxy setups
 - Demonstrating authentication flows
 - Learning HTTP request structures
-- Development and testing environments
+- Logging HTTP requests
 
 ## ✨ Features
 
@@ -21,7 +23,6 @@ The **Request Logger Sample App** is a mock backend service that captures and di
 - **Theme Toggle**: Light/dark mode switching for better user experience
 - **Real-time Display**: Shows request information as it arrives
 - **Portable**: Runs as a standalone service on port 8080
-- **WSO2 Integration**: Designed specifically for WSO2 Identity Server workflows
 
 ## 🚀 Quick Start
 
@@ -116,20 +117,6 @@ The project uses Maven with the following key plugins:
 - **maven-compiler-plugin**: Java 11 compilation
 - **maven-assembly-plugin**: Creates executable JAR with dependencies
 
-## 🎨 UI Features
-
-### Theme System
-- **Dark Mode**: Default theme with dark backgrounds and light text
-- **Light Mode**: Alternative theme with light backgrounds and dark text
-- **Toggle Button**: Floating button in the top-right corner
-- **Smooth Transitions**: CSS animations for theme switching
-
-### Responsive Design
-- Mobile-friendly layout
-- Adaptive typography
-- Flexible card system
-- Touch-friendly interface elements
-
 ## 📦 Dependencies
 
 | Dependency | Version | Purpose |
@@ -137,31 +124,12 @@ The project uses Maven with the following key plugins:
 | `spark-core` | 2.9.4 | HTTP framework |
 | `slf4j-simple` | 1.7.36 | Logging framework |
 
-## 🚀 Deployment
-
-### Local Development
-```bash
-mvn spring-boot:run
-```
-
-### Production Build
-```bash
-mvn clean package
-```
-
-### Docker (if needed)
-```dockerfile
-FROM openjdk:11-jre-slim
-COPY target/request-logger-1.0-SNAPSHOT-jar-with-dependencies.jar app.jar
-EXPOSE 8080
-CMD ["java", "-jar", "app.jar"]
-```
-
 ## 🔍 Troubleshooting
 
 ### Common Issues
 
 1. **Port Already in Use**
+
    ```bash
    # Check what's using port 8080
    lsof -i :8080
@@ -170,6 +138,7 @@ CMD ["java", "-jar", "app.jar"]
    ```
 
 2. **Java Version Issues**
+
    ```bash
    # Verify Java version
    java -version
@@ -178,37 +147,14 @@ CMD ["java", "-jar", "app.jar"]
    ```
 
 3. **Maven Build Failures**
+
    ```bash
    # Clean and rebuild
    mvn clean package -U
    ```
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
 ## 📄 License
 
 This project is licensed under the [Apache License 2.0](LICENSE).
 
-## 🔗 Related Links
-
-- [WSO2 Identity Server](https://wso2.com/identity-server/)
-- [WSO2 Identity Gateway](https://wso2.com/identity-gateway/)
-- [Spark Java Framework](http://sparkjava.com/)
-- [WSO2 Samples Repository](https://github.com/wso2/samples-is)
-
-## 📞 Support
-
-For support and questions:
-- [WSO2 Documentation](https://docs.wso2.com/)
-- [WSO2 Community](https://wso2.com/community/)
-- [GitHub Issues](https://github.com/wso2/samples-is/issues)
-
----
-
-**Note**: This application is designed for development, testing, and demonstration purposes. It should not be used in production environments without proper security considerations.
+**Note**: This application is designed for development, testing, and demonstration purposes.
